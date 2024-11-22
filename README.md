@@ -7,6 +7,12 @@
 - Team challenge : `solo`
 - Submission form: wip
 
+## Installation & Usage
+
+1. Clone the repository
+2. Run `npm install`
+3. Run `npm build`
+
 ## Mission objectives
 
 In this challenge you will use and consolidate your knowledge on:
