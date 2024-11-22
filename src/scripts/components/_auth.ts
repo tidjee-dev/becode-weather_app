@@ -64,7 +64,8 @@ const registerUser = async (username: string, password: string) => {
   const url = "http://localhost:15000/auth/register";
   const response = await makeApiRequest(url, data);
   if (response) {
-    localStorage.setItem("user", JSON.stringify(data));
+    // const hashedPassword: string = await bcrypt.hash(data.password, 10);
+    localStorage.setItem("user", JSON.stringify({ username }));
     loginUser(username, password); // Automatically login after registering
   }
 };
