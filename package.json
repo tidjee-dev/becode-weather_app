@@ -1,0 +1,21 @@
+{
+  "name": "becode-weather_app-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/scripts/app.ts",
+  "scripts": {
+    "prefix": "postcss src/styles/styles.css -o src/styles/styles.css",
+    "sass-watch": "sass --watch src/styles/scss/app.scss src/styles/styles.css",
+    "type": "tsc --watch",
+    "build": "sass src/styles/scss/app.scss src/styles/styles.css && npm run prefix && tsc"
+  },
+  "keywords": [ ],
+  "author": "tidjee-dev",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss-cli": "^11.0.0",
+    "typescript": "^5.6.3"
+  }
+
+}
