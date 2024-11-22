@@ -1,10 +1,19 @@
 import dotenv from "dotenv";
 import express from "express";
 import fetch from "node-fetch";
+import userRoutes from "./router.mjs";
+import authenticateToken from "./middleware/authToken.mjs";
+import limiter from "./middleware/rateLimiter.mjs";
 
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(express.json());
+app.use(limiter);
+
+// Register routes
+app.use("/auth", userRoutes);
 
 /**
  * Fetches coordinates for a given city from the OpenWeatherMap Geo API.
@@ -36,7 +45,7 @@ const getCityCoordinates = async (cityName) => {
  * @param {express.Request} req - The request object
  * @param {express.Response} res - The response object
  */
-app.get("/api/weather", async (req, res) => {
+app.get("/api/weather", authenticateToken, async (req, res) => {
   const cityName = req.query.city;
 
   if (!cityName) {
@@ -67,7 +76,7 @@ app.get("/api/weather", async (req, res) => {
  * @param {express.Request} req - The request object
  * @param {express.Response} res - The response object
  */
-app.get("/api/weather/forecast", async (req, res) => {
+app.get("/api/weather/forecast", authenticateToken, async (req, res) => {
   const cityName = req.query.city;
 
   if (!cityName) {
