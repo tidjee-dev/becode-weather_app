@@ -5,9 +5,10 @@
   "main": "src/scripts/app.ts",
   "scripts": {
     "prefix": "postcss src/styles/styles.css -o src/styles/styles.css",
-    "sass-watch": "sass --watch src/styles/scss/app.scss src/styles/styles.css",
-    "type": "tsc --watch",
-    "build": "sass src/styles/scss/app.scss src/styles/styles.css && npm run prefix && tsc"
+    "sass-watch": "sass --watch src/styles/scss/app.scss dist/styles/styles.css",
+    "type-watch": "tsc --watch",
+    "watch": "npm run sass-watch && npm run type-watch && npm run prefix",
+    "build": "sass src/styles/scss/app.scss dist/styles/styles.css && npm run prefix && tsc"
   },
   "keywords": [ ],
   "author": "tidjee-dev",
@@ -17,5 +18,4 @@
     "postcss-cli": "^11.0.0",
     "typescript": "^5.6.3"
   }
-
 }
