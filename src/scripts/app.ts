@@ -1,4 +1,4 @@
-import initAuth from "./components/auth.js";
+import initAuth from "./components/_auth.js";
 // import weather from "./components/weather.js";
 // import forecast from "./components/forecast.js";
 import generateFooter from "./components/_footer.js";
