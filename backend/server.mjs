@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import fetch from "node-fetch";
+import cors from "cors";
 import userRoutes from "./router.mjs";
 import authenticateToken from "./middleware/authToken.mjs";
 import limiter from "./middleware/rateLimiter.mjs";
@@ -8,6 +9,8 @@ import limiter from "./middleware/rateLimiter.mjs";
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors());
 
 app.use(express.json());
 app.use(limiter);
