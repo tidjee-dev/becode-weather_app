@@ -8,14 +8,21 @@
     "sass-watch": "sass --watch src/styles/scss/app.scss dist/styles/styles.css",
     "type-watch": "tsc --watch",
     "watch": "npm run sass-watch && npm run type-watch && npm run prefix",
-    "build": "sass src/styles/scss/app.scss dist/styles/styles.css && npm run prefix && tsc"
+    "build": "sass src/styles/scss/app.scss dist/styles/styles.css && npm run prefix && tsc",
+    "serve": "nodemon backend/server.mjs"
   },
-  "keywords": [ ],
+  "keywords": [],
   "author": "tidjee-dev",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss-cli": "^11.0.0",
     "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.7"
   }
 }
