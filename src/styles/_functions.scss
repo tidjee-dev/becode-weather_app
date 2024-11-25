@@ -1,0 +1,7 @@
+@function rem($px) {
+  @return $px / 16 * 1rem;
+}
+
+@function rgba($color, $alpha: 0.5) {
+  @return mix(transparent, $color, $alpha);
+}

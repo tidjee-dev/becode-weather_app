@@ -1,0 +1,27 @@
+@use "../variables" as *;
+@use "../functions" as *;
+
+#theme-switcher {
+  cursor: pointer;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: rem(40);
+  height: rem(40);;
+  border-radius: 50%;
+  background-color: $color-dark;
+  box-shadow: 0 0 10px rgba(#000, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+  body.dark & {
+    background-color: $color-primary;
+  }
+
+  .theme-icon {
+    width: rem(24);
+    height: rem(24);
+  }
+}

@@ -1,0 +1,72 @@
+@use "../variables" as *;
+@use "../functions" as *;
+@use "../mixins";
+@use "../placeholders";
+
+/**
+ * Auth
+ */
+#auth-container {
+  @include mixins.glassmorphism($bg-color: $color-dark, $alpha: 40);
+  width: rem(400);
+  padding: rem(20);
+  @extend %flex-column-center;
+
+  @include mixins.media-query($breakpoint-lg) {
+    width: rem(600);
+  }
+
+  body.dark & {
+    @include mixins.glassmorphism($bg-color: $color-light);
+  }
+
+  .auth-form {
+    @extend %flex-column-center;
+    gap: 1rem;
+    padding: 1rem;
+
+    .form-title {
+      font-size: rem(24);
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 1rem;
+    }
+
+    label {
+      font-size: rem(16);
+    }
+
+    input {
+      padding: 0.5rem;
+      border: 1px solid $color-primary;
+      border-radius: 4px;
+      font-size: rem(16);
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      background-color: $color-primary;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: rem(16);
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba($color-accent, 0.5);
+      }
+    }
+  }
+}
+
+#logout-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  @include mixins.button($bg-color: $color-danger, $text-color: $color-light, $hover-bg-color: $color-danger, $hover-text-color: $color-light, $border-radius: 5px);
+  // margin: rem(10) 0;
+  padding: rem(5) rem(10);
+  font-size: rem(16);
+  cursor: pointer;
+
+}

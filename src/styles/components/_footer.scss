@@ -1,0 +1,40 @@
+@use "../variables" as *;
+@use "../functions" as *;
+@use "../mixins" as *;
+@use "../placeholders";
+
+/**
+ * Footer
+ */
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: auto;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  font-size: rem(12);
+  height: rem(40);
+  color: $color-dark;
+
+  body.dark & {
+    color: $color-light;
+  }
+
+  .footer-link {
+    color: $color-primary;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  @include media-query($breakpoint-lg) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+}

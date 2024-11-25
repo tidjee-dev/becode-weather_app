@@ -1,0 +1,70 @@
+@use "functions" as *;
+// Font
+$font-family: Arial, Helvetica, sans-serif;
+$font-size: rem(16);
+$line-height: 1.5;
+$font-color: #333;
+
+// Colors
+$color-primary: #2196f3;
+$color-secondary: #ff9800;
+$color-success: #2ecc71;
+$color-danger: #f44336;
+$color-warning: #ffeb3b;
+$color-info: #00bcd4;
+$color-accent: #9c27b0;
+$color-light: #ecf0f1;
+$color-dark: #333333;
+
+// Background colors
+$light-bg: #f7f9fc;
+$dark-bg: #1e1e2f;
+
+// Weather-specific color themes
+$weather-sunny: (
+  text-light: #f57f17,
+  background-light: #fffde7,
+  text-dark: #ffd600,
+  background-dark: #f9a825
+);
+
+$weather-partly-cloudy: (
+  text-light: #5c6bc0,
+  background-light: #e3f2fd,
+  text-dark: #3949ab,
+  background-dark: #1a237e
+);
+
+$weather-cloudy: (
+  text-light: #90a4ae,
+  background-light: #eceff1,
+  text-dark: #546e7a,
+  background-dark: #37474f
+);
+
+$weather-rainy: (
+  text-light: #1565c0,
+  background-light: #e3f2fd,
+  text-dark: #0d47a1,
+  background-dark: #102027
+);
+
+$weather-snowy: (
+  text-light: #b3e5fc,
+  background-light: #f1f8e9,
+  text-dark: #aed581,
+  background-dark: #37474f
+);
+// Shadows
+$shadow-light: rgba(rgb(255, 255, 255), 70);
+$shadow-dark: rgba(rgb(0, 0, 0), 70);
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Width
+$width-container: 1200px;
+$max-width-container: 90%;

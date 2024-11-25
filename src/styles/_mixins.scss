@@ -1,0 +1,54 @@
+@use "variables" as *;
+@use "functions" as *;
+
+@mixin flex-center($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin media-query($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin transition($properties: all, $duration: 0.3s, $ease: ease) {
+  transition: $properties $duration $ease;
+}
+
+@mixin glassmorphism($bg-color: $color-light,
+  $alpha: 50,
+  $shadow-size: rem(10),
+  $shadow-color: $shadow-dark,
+  $border-radius: rem(10), ) {
+  background-color: rgba($color: $bg-color, $alpha: $alpha);
+  box-shadow: 0 $shadow-size $shadow-size $shadow-color;
+  backdrop-filter: blur(calc($shadow-size));
+  border-radius: $border-radius;
+}
+
+@mixin button($bg-color: $color-primary,
+  $text-color: $color-light,
+  $hover-bg-color: $color-secondary,
+  $hover-text-color: $color-light,
+  $border: 1px solid transparent,
+  $hover-border: 1px solid $color-secondary,
+  $border-radius: 5px) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: $border;
+  border-radius: $border-radius;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $hover-bg-color;
+    color: $hover-text-color;
+    border: $hover-border;
+
+  }
+}

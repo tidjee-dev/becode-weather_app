@@ -1,0 +1,40 @@
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
+@use "placeholders";
+
+/**
+ * Base
+ */
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color-light;
+  background-color: $light-bg;
+  transition: all 0.3s ease-in-out;
+  height: 100vh;
+
+  &.dark {
+    background-color: $dark-bg;
+    color: $color-light;
+  }
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 40px);
+  margin-top: auto;
+  position: relative;
+}
+
+.container {
+  width: $width-container;
+  max-width: $max-width-container;
+  margin: 0 auto;
+  padding: 1rem;
+  @extend %flex-column-center;
+}

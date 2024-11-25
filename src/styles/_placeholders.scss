@@ -1,0 +1,56 @@
+%hidden {
+  display: none;
+  visibility: hidden;
+}
+
+%flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%flex-row-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+%flex-row-evenly {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+%flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-column-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%flex-column-around {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+%flex-column-evenly {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
